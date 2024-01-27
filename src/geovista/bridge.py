@@ -672,7 +672,7 @@ class Transform:
 
             vectors = [np.asanyarray(vecdata) for vecdata in vectors]
             xx, yy = vectors[:2]
-            zz = vectors[2] if n_vecs > 2 else zz = np.zeros_like(xx)
+            zz = vectors[2] if n_vecs > 2 else np.zeros_like(xx)
 
             if vectors_z_scaling is not None:
                 zz = zz * vectors_z_scaling
