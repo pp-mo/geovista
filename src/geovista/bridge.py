@@ -677,7 +677,8 @@ class Transform:
             if vectors_z_scaling is not None:
                 zz = zz * vectors_z_scaling
 
-            # TODO @pp-mo: should we pass flattened arrays here, and reshape as-per the inputs
+            # TODO @pp-mo: should we pass flattened arrays here, and reshape
+            # as-per the inputs
             #  (and xyz)?  not clear if multidimensional input is used or needed
             xx, yy, zz = vectors_to_cartesian(
                 lons_lats=(xs, ys),
