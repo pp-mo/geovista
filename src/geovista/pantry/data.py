@@ -998,19 +998,10 @@ def lfric_winds() -> SampleStructuredXYZ:
     .. versionadded:: 0.5.0
 
     """
-    # TODO:
-    #  #1 access with pooch and cache
-    #  #2 include the data in geovista-data
-    # fname = "lfric-winds.nc"
-    # processor = pooch.Decompress(method="auto", name=fname)
-    # resource = CACHE.fetch(f"{PANTRY_DATA}/{fname}.bz2", processor=processor)
-    # dataset = nc.Dataset(resource)
-    temporary_path = (
-        Path(__file__).parent
-        / "temporary_mini_test_data"
-        / "lfric_winds_sample.nc"
-    )
-    dataset = nc.Dataset(temporary_path)
+    fname = "lfric_winds_sample.nc"
+    processor = pooch.Decompress(method="auto", name=fname)
+    resource = CACHE.fetch(f"{PANTRY_DATA}/{fname}.bz2", processor=processor)
+    dataset = nc.Dataset(resource)
 
     # load the lon/lat/zlevel points
     lons = dataset.variables["Mesh2d_face_x"][:]
