@@ -15,7 +15,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 from functools import lru_cache
-from pathlib import Path
 from typing import TYPE_CHECKING
 
 import lazy_loader as lazy
@@ -981,7 +980,6 @@ def ww3_global_tri() -> SampleUnstructuredXY:
     )
 
 
-
 @lru_cache(maxsize=LRU_CACHE_SIZE)
 def lfric_winds() -> SampleStructuredXYZ:
     """Download and cache unstructured 3D winds sample.
@@ -1015,5 +1013,3 @@ def lfric_winds() -> SampleStructuredXYZ:
     name = "Wind"
 
     return SampleVectorsXYUVW(lons, lats, u, v, w, name=name, units=units)
-
-
